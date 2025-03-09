@@ -1,0 +1,90 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "commitlint": "commitlint --edit",
+    "lint-staged": "lint-staged",
+    "wawwwww": "better-commits",
+    "prepare": "husky",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "1.2.0",
+    "@nuxt/ui": "2.21.1",
+    "eslint": "^9.0.0",
+    "nuxt": "^3.16.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "packageManager": "pnpm@10.6.1+sha512.40ee09af407fa9fbb5fbfb8e1cb40fbb74c0af0c3e10e9224d7b53c7658528615b2c92450e74cfad91e3a2dcafe3ce4050d80bda71d757756d2ce2b66213e9a3",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "better-commits": "^1.16.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "typescript": "^5.8.2"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --fix"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "feat",
+          "fix",
+          "docs",
+          "refactor",
+          "perf",
+          "test",
+          "build",
+          "ci",
+          "chore"
+        ]
+      ],
+      "scope-enum": [
+        2,
+        "always",
+        [
+          "app",
+          "shared",
+          "server",
+          "tools"
+        ]
+      ],
+      "header-max-length": [
+        2,
+        "always",
+        72
+      ],
+      "subject-case": [
+        2,
+        "always",
+        "sentence-case"
+      ],
+      "body-max-length": [
+        2,
+        "always",
+        1000
+      ],
+      "footer-max-length": [
+        2,
+        "always",
+        1000
+      ]
+    }
+  }
+}
